@@ -8,40 +8,43 @@ This stops the program from crashing when an invalid number is added.
 name = input("Please enter your name: ")
 age = ""
 
-if age == "":
-    while not age:
-        try:
-            age = int(input("Please enter your age: "))
-        except ValueError:
-            age = int(input("Please enter a whole number: "))
+while age == "":
+    if age == "":
+        while not age:
+            try:
+                age = int(input("Please enter your age: "))
+            except ValueError:
+                age = int(input("Please enter a whole number: "))
 
-    # If statement so when age is less than 8 it recommends a difficulty of 1
-    if 0 < age <= 8:
-        difficulty = "1"
+        # If statement so when age is less than 8 it recommends a difficulty
+        # of 1
+        if 0 < age <= 8:
+            difficulty = "1"
 
-    # If age is less than (or equal to) 15 it recommends a difficulty of 2
-    elif age <= 15:
-        difficulty = "2"
+        # If age is less than (or equal to) 15 it recommends a difficulty of 2
+        elif age <= 15:
+            difficulty = "2"
 
-    # If age is anything else it recommends a difficulty of 3
+        # If age is anything else it recommends a difficulty of 3
+        else:
+            difficulty = "3"
+
+        # Output
+        print(f"Recommended difficulty = {difficulty}")
     else:
-        difficulty = "3"
+        age = int(input("Please enter a whole number: "))
+        # If statement so when age is less than 8 it recommends a difficulty
+        # of 1
+        if 0 < age <= 8:
+            difficulty = "1"
 
-    # Output
-    print(f"Difficulty = {difficulty}")
-else:
-    age = int(input("Please enter a whole number: "))
-    # If statement so when age is less than 8 it recommends a difficulty of 1
-    if 0 < age <= 8:
-        difficulty = "1"
+        # If age is less than (or equal to) 15 it recommends a difficulty of 2
+        elif age <= 15:
+            difficulty = "2"
 
-    # If age is less than (or equal to) 15 it recommends a difficulty of 2
-    elif age <= 15:
-        difficulty = "2"
+        # If age is anything else it recommends a difficulty of 3
+        else:
+            difficulty = "3"
 
-    # If age is anything else it recommends a difficulty of 3
-    else:
-        difficulty = "3"
-
-    # Output
-    print(f"Difficulty = {difficulty}")
+        # Output
+        print(f"Recommended difficulty = {difficulty}")
