@@ -1,12 +1,14 @@
 """ V5 of code for getting user details
-This version takes code from v2 and places it in an if statement to check if
-the age entered by the user is an integer by using a try and accept loop.
-This stops the program from crashing when an invalid number is added.
+This version takes code from v3 and turns it into a function
 """
 
 
-def get_details(age):
+# Function to ask for user input and then use that to recommend a difficulty
+def get_details():
+    # Asks user for their name to personalize experience
+    name = input("Please enter your name: ")
     age = ""
+
     while age == "":
         if age == "":
             while not age:
@@ -30,7 +32,10 @@ def get_details(age):
                 difficulty = "3"
 
             # Output
+            print(f"Name = {name}")
+            print(f"Age = {age}")
             print(f"Recommended difficulty = {difficulty}")
+
         else:
             age = int(input("Please enter a whole number: "))
             # If statement so when age is less than 8 it recommends a
@@ -48,13 +53,10 @@ def get_details(age):
                 difficulty = "3"
 
             # Output
+            print(f"Name = {name}")
+            print(f"Age = {age}")
             print(f"Recommended difficulty = {difficulty}")
-    return age
 
 
-# Asks user for their name to personalize experience
-name = input("Please enter your name: ")
-age_ = ""
-details = get_details(age_)
-print(name)
-print(age_)
+# Main routine
+get_details()
