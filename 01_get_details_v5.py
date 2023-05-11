@@ -37,25 +37,26 @@ def get_details():
             print(f"Recommended difficulty = {difficulty}")
 
         else:
-            age = int(input("Please enter a whole number: "))
-            # If statement so when age is less than 8 it recommends a
-            # difficulty of 1
-            if 0 < age <= 8:
-                difficulty = "1"
+            while age != int(age):
+                age = int(input("Please enter a whole number: "))
+                # If statement so when age is less than 8 it recommends a
+                # difficulty of 1
+                if 0 < age <= 8:
+                    difficulty = "1"
 
-            # If age is less than (or equal to) 15 it recommends a difficulty
-            # of 2
-            elif age <= 15:
-                difficulty = "2"
+                # If age is less than (or equal to) 15 it recommends a
+                # difficulty of 2
+                elif age <= 15:
+                    difficulty = "2"
 
-            # If age is anything else it recommends a difficulty of 3
-            else:
-                difficulty = "3"
+                # If age is anything else it recommends a difficulty of 3
+                else:
+                    difficulty = "3"
 
-            # Output
-            print(f"Name = {name}")
-            print(f"Age = {age}")
-            print(f"Recommended difficulty = {difficulty}")
+                # Output
+                print(f"Name = {name}")
+                print(f"Age = {age}")
+                print(f"Recommended difficulty = {difficulty}")
 
 
 # Main routine
