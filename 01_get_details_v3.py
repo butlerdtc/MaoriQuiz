@@ -8,8 +8,10 @@ This stops the program from crashing when an invalid number is added.
 name = input("Please enter your name: ")
 age = ""
 
+# While loop to run loop to ask for correct input for their age
 while age == "":
     if age == "":
+        # Integer checker
         while not age:
             try:
                 age = int(input("Please enter your age: "))

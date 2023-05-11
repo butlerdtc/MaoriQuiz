@@ -2,6 +2,7 @@
 This version takes code from v2 and places it in an if statement to check if
 the age entered by the user is an integer by using the 'is.digit()' method.
 This stops the program from crashing when an invalid number is added.
+This version was an experiment and is not used in final version of component.
 """
 
 # Asks user for their name to personalize experience
