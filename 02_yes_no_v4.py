@@ -1,5 +1,6 @@
 """ Maori Quiz Yes/No Checker v4
-Converts v3 code into a function.
+Converts v3 code into a function. Fixes the problem from v1 and v2, so it is
+now looped correctly and will continue to ask until valid input is entered.
 Code from Lucky Unicorn 02_yes_no_function_v1. Reused.
 """
 
