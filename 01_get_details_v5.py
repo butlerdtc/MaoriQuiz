@@ -2,12 +2,16 @@
 This version takes code from v3 and turns it into a function. Changes were made
 so that if invalid input is entered when the question repeats, it prints an
 error message, it will not crash and the loop will continue until valid input
-is entered.
+is entered. Also displays a welcome message now.
 """
 
 
 # Function to ask for user input and then use that to recommend a difficulty
 def get_details():
+    # Displays welcome message and empty print statements for aesthetics
+    print()
+    print("Welcome to this Maori Quiz. This is a quiz about numbers in Maori.")
+    print()
     # Asks user for their name to personalize experience
     name = input("Please enter your name: ")
     age = ""
@@ -33,7 +37,7 @@ def get_details():
         difficulty = 3
 
     # Output
-    print(f"Name = {name}")
+    print(f"Name = {name} ")
     print(f"Age = {age}")
     print(f"Recommended difficulty = {difficulty}")
 
