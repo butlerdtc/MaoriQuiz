@@ -1,8 +1,5 @@
-""" V5 of code for getting user details
-This version takes code from v3 and turns it into a function. Changes were made
-so that if invalid input is entered when the question repeats, it prints an
-error message, it will not crash and the loop will continue until valid input
-is entered. Also displays a welcome message now.
+""" Maori Quiz Base Component v1
+Each component gets added after creation and testing.
 """
 
 
@@ -22,7 +19,7 @@ def get_details():
     middle_bracket = 15
     lower_bracket = 8
 
-    # A loop to check if user input is a valid integer
+    # A loop to ask for their age and check if input is a valid integer
     while not age:
         error = "Age must be a whole number"
         try:
@@ -48,5 +45,30 @@ def get_details():
     print(f"Recommended difficulty = {difficulty}")
 
 
+# Function to ask if they have played and check for valid input of yes or no
+def yes_no(question_text):
+    while True:
+
+        # Ask user if they have played before
+        answer = input(question_text).lower()
+
+        # If yes output 'Program continues'
+        if answer == "yes" or answer == "y":
+            answer = "Yes"
+            return answer
+
+        # If no output 'Show instructions'
+        elif answer == "no" or answer == "n":
+            answer = "No"
+            return answer
+
+        # Otherwise show 'Error'
+        else:
+            print("Please enter 'yes' or 'no'")
+
+
 # Main routine
 get_details()
+# Code to call component 2
+show_instructions = yes_no("Have you played the quiz before? ")
+print(f"You entered '{show_instructions}'")
