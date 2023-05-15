@@ -16,10 +16,13 @@ level = int(input("Please enter either 1, 2, or 3 to choose a level: "))
 
 # If statement to calculate and print level depending on their input
 if level == 1 or 2 or 3:
+    # If input is 1, level 1 is printed
     if level == 1:
         print("Level 1")
+    # If input is 2 it prints level 2
     elif level == 2:
         print("Level 2")
+    # If input is 3 it prints level 3
     elif level == 3:
         print("Level 3")
     # Else statement to print an error message for invalid input
