@@ -1,4 +1,4 @@
-""" V1 of the question generator """
+""" V1 of the random question generator """
 
 
 # Function to ask user for a difficulty level
@@ -44,3 +44,7 @@ def difficulty_levels():
 
 # Main routine
 difficulty_levels()
+
+list_1 = []
+list_2 = []
+list_3 = []

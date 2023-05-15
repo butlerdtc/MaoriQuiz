@@ -1,5 +1,7 @@
 """ Maori Quiz Base Component v1
 Each component gets added after creation and testing.
+Created by Robson Butler
+16/05/23
 """
 
 
@@ -69,6 +71,6 @@ def yes_no(question_text):
 
 # Main routine
 get_details()
-# Code to call component 2
+# Code to call yes/no function
 show_instructions = yes_no("Have you played the quiz before? ")
 print(f"You entered '{show_instructions}'")
