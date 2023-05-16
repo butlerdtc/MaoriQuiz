@@ -29,14 +29,14 @@ def difficulty_levels():
             print(f"You entered {level}")
             # If level is 1 it will set chosen_level to 1
             if level == "1":
-                chosen_level = 1
+                chosen_level = "1"
             # If level is 2 it will set chosen_level to 2
             elif level == "2":
-                chosen_level = 2
+                chosen_level = "2"
             # If level is anything else (only possible remaining value is 3) it
             # will set chosen_value to 3
             else:
-                chosen_level = 3
+                chosen_level = "3"
             # Prints result of user input
             print(f"You have chosen a difficulty level of {chosen_level}")
             return chosen_level
