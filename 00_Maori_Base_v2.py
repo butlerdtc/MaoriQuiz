@@ -13,7 +13,8 @@ import random
 def get_details():
     # Displays welcome message and empty print statements for aesthetics
     print()
-    print("Welcome to this Maori Quiz. This is a quiz about numbers in Maori.")
+    print("Welcome to this Maori Quiz. This is a quiz about numbers and the "
+          "days of the week in Maori.")
     print()
     # Asks user for their name to personalize experience
     name = input("Please enter your name: ")
@@ -156,6 +157,8 @@ def question_generator():
 
     # Variable to be assigned value from difficulty_levels function
     level_chosen = difficulty_levels()
+    # Score variable to calculate their result
+    score = 0
 
     # If statements to run program depending on chosen difficulty level
     if level_chosen == "1":
@@ -167,9 +170,12 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
+                score += 1
             else:
                 # If answer is incorrect this prints incorrect
                 print("Incorrect")
+                score += 0
     elif level_chosen == "2":
         # This loop asks the questions from list 2 and will ask for input and
         # then check if the answer is correct. It will ask  each question once.
@@ -181,9 +187,12 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
+                score += 1
             else:
                 # If answer is incorrect this prints incorrect
                 print("Incorrect")
+                score += 0
     else:
         # This loop asks the questions from list 3 and will ask for input and
         # then check if the answer is correct. It will ask  each question once.
@@ -195,11 +204,37 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
+                score += 1
             else:
                 # If answer is incorrect this prints incorrect
                 print("Incorrect")
+                score += 0
     # Test Statement
     print("End")
+    # Returns user score
+    return score
+
+
+# Function to calculate user score from question function
+def calculate_result(score):
+    # If score is between 0 and 3 this prints 'Better luck next time'
+    if 0 <= score <= 3:
+        print(f"You scored {score}/10\n"
+              f"Better luck next time")
+    # If score is between 4 and 6 this prints 'Not bad'
+    elif 3 < score <= 6:
+        print(f"You scored {score}/10\n"
+              f"Not bad")
+    # If score is between 7 and 9 this prints 'Good job'
+    elif 6 < score <= 9:
+        print(f"You scored {score}/10\n"
+              f"Good job")
+    # If score is 10 it prints perfect score and congratulates user
+    else:
+        print(f"You scored {score}/10\n"
+              f"You got a perfect score! Congratulations")
+    print("Thank you for completing this quiz!")
 
 
 # Main routine
@@ -208,4 +243,5 @@ get_details()
 show_instructions = yes_no("Have you played the quiz before? ")
 print(f"You entered '{show_instructions}'")
 # Code to call difficulty_levels() and question_generator()
-question_generator()
+result = question_generator()
+calculate_result(result)

@@ -1,7 +1,7 @@
-""" V1 of the score calculator.
+""" V2 of the score calculator.
 This uses the functions from 03_difficulty_v3 and 04_question_generator_v3.
-This uses a variable to set the score and then adds 1 to it if they get a
-question right or adds 0 if they get it wrong.
+This makes a function to add a statement in response to their score.
+This adds a feedback statement that depends on their score using if statements.
 """
 # This imports random for use in program
 import random
@@ -90,6 +90,7 @@ def question_generator():
 
     # Variable to be assigned value from difficulty_levels function
     level_chosen = difficulty_levels()
+    # Score variable to calculate their result
     score = 0
 
     # If statements to run program depending on chosen difficulty level
@@ -102,6 +103,7 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
                 score += 1
             else:
                 # If answer is incorrect this prints incorrect
@@ -118,6 +120,7 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
                 score += 1
             else:
                 # If answer is incorrect this prints incorrect
@@ -134,6 +137,7 @@ def question_generator():
             if answer == i[1]:
                 # If answer is correct this prints correct
                 print("Correct")
+                # Adds 1 to score
                 score += 1
             else:
                 # If answer is incorrect this prints incorrect
@@ -141,9 +145,32 @@ def question_generator():
                 score += 0
     # Test Statement
     print("End")
+    # Returns user score
     return score
+
+
+# Function to calculate user score from question function
+def calculate_result(score):
+    # If score is between 0 and 3 this prints 'Better luck next time'
+    if 0 <= score <= 3:
+        print(f"You scored {score}/10\n"
+              f"Better luck next time")
+    # If score is between 4 and 6 this prints 'Not bad'
+    elif 3 < score <= 6:
+        print(f"You scored {score}/10\n"
+              f"Not bad")
+    # If score is between 7 and 9 this prints 'Good job'
+    elif 6 < score <= 9:
+        print(f"You scored {score}/10\n"
+              f"Good job")
+    # If score is 10 it prints perfect score and congratulates user
+    else:
+        print(f"You scored {score}/10\n"
+              f"You got a perfect score! Congratulations")
+    print("Thank you for completing this quiz!")
 
 
 # Main routine
 result = question_generator()
-print(f"You scored {result}")
+# Calls function and uses result from previous function
+calculate_result(result)
