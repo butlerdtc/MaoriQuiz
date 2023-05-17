@@ -1,5 +1,6 @@
 """ Maori Quiz Base Component v1
 Each component gets added after creation and testing.
+Functions from components 1 and 2
 Created by Robson Butler
 16/05/23
 """
