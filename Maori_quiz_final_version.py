@@ -1,7 +1,5 @@
-""" Maori Quiz Base Component v3
-Adds instructions and formats some important text with formatter
-Based on 00_Maori_Base_v2
-Functions added from component 6
+""" Maori Quiz Final version
+Based on 00_Maori_Base_v3
 Created by Robson Butler
 18/05/23
 """
