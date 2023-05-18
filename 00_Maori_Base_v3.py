@@ -1,20 +1,29 @@
-""" Maori Quiz Base Component v2
-Each component gets added after creation and testing.
-Based on 00_Maori_Base_v1
-Functions added from components 3 and 4 and 5
+""" Maori Quiz Base Component v3
+Adds instructions and formats some important text with formatter
+Based on 00_Maori_Base_v2
+Functions added from component 6
 Created by Robson Butler
-17/05/23
+18/05/23
 """
 # This imports random for use in program
 import random
 
 
+# Function to format text output
+def formatter(symbol, text):
+    sides = symbol * 3
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = symbol * len(formatted_text)
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
+
+
 # Function to ask for user input and then use that to recommend a difficulty
 def get_details():
-    # Displays welcome message and empty print statements for aesthetics
+    # Displays welcome message and uses statement formatter
     print()
-    print("Welcome to this Maori Quiz. This is a quiz about numbers and the "
-          "days of the week in Maori.")
+    print(formatter("!", "Welcome to this Maori Quiz."))
+    print()
+    print(" This is a quiz about numbers and the days of the week in Maori.")
     print()
     # Asks user for their name to personalize experience
     name = input("Please enter your name: ")
@@ -47,9 +56,9 @@ def get_details():
         difficulty = level_3
 
     # Output
-    print(f"Name = {name} ")
-    print(f"Age = {age}")
-    print(f"Recommended difficulty = {difficulty}")
+    print(f"Welcome to the quiz {name}, good-luck! ")
+    print(f"We recommended you a difficulty of {difficulty}")
+    print()
 
 
 # Function to ask if they have played and check for valid input of yes or no
@@ -78,8 +87,8 @@ def yes_no(question_text):
 def difficulty_levels():
     # Statement to explain differences in difficulty levels
     print()
-    print("This is a quiz about numbers in Maori. "
-          "This quiz has three different levels of difficulty.\n"
+    print(formatter("*", "This is a quiz about numbers in Maori. "))
+    print("This quiz has three different levels of difficulty.\n"
           "Level 1 is the easiest difficulty\n"
           "Level 2 is medium difficulty\n"
           "Level 3 is the hardest difficulty\n"
@@ -95,8 +104,6 @@ def difficulty_levels():
         level = input("Please choose a difficulty, enter 1, 2, or 3: ")
         # Checks if input is valid (1, 2, or 3) then ends the loop
         if level == "1" or level == "2" or level == "3":
-            # Prints user input
-            print(f"You entered {level}")
             # If level is 1 it will set chosen_level to 1
             if level == "1":
                 chosen_level = "1"
@@ -108,7 +115,9 @@ def difficulty_levels():
             else:
                 chosen_level = "3"
             # Prints result of user input
-            print(f"You have chosen a difficulty level of {chosen_level}")
+            print(formatter("~", f"You have chosen a difficulty level of "
+                                 f"{chosen_level}"))
+            print()
             return chosen_level
         # If invalid the loop repeats
         else:
@@ -165,7 +174,7 @@ def question_generator():
         # This loop asks the questions from list 1 and will ask for input and
         # then check if the answer is correct. It will ask  each question once.
         for i in questions_1:
-            answer = input("Please enter the answer to the question: {}: "
+            answer = input("Please answer: {}: "
                            .format(i[0]))
             if answer == i[1]:
                 # If answer is correct this prints correct
@@ -182,7 +191,7 @@ def question_generator():
         # This loop asks the questions from list 2 and will ask for input and
         # then check if the answer is correct. It will ask  each question once.
         for i in questions_2:
-            answer = input("Please enter the answer to the question: {}: "
+            answer = input("Please answer: {}: "
                            .format(i[0]))
             # Makes answer capitalization correct
             answer = answer.lower()
@@ -201,7 +210,7 @@ def question_generator():
         # This loop asks the questions from list 3 and will ask for input and
         # then check if the answer is correct. It will ask  each question once.
         for i in questions_3:
-            answer = input("Please enter the answer to the question: {}: "
+            answer = input("Please answer: {}: "
                            .format(i[0]))
             # Makes answer capitalization correct
             answer = answer.title()
@@ -216,8 +225,6 @@ def question_generator():
                 score += 0
         # Variable to be set to a value of 3 (used in score function)
         challenge = "3"
-    # Test Statement
-    print("End")
     # Returns challenge (difficulty) level and user score
     return challenge, score
 
@@ -228,47 +235,64 @@ def calculate_result(level_, score):
     if level_ == "3":
         # If score is between 0 and 2 this prints 'Better luck next time'
         if 0 <= score <= 2:
-            print(f"You scored {score}/7\n"
-                  f"Better luck next time")
+            print()
+            print(formatter("^", f"You scored {score}/7"))
+            print("Better luck next time")
         # If score is between 3 and 4 this prints 'Not bad'
         elif 2 < score <= 4:
-            print(f"You scored {score}/7\n"
-                  f"Not bad")
+            print()
+            print(formatter("^", f"You scored {score}/7"))
+            print("Not bad")
         # If score is between 5 and 6 this prints 'Good job'
         elif 4 < score <= 6:
-            print(f"You scored {score}/7\n"
-                  f"Good job")
+            print()
+            print(formatter("^", f"You scored {score}/7"))
+            print("Good job")
         # If score is 7 it prints perfect score and congratulates user
         else:
-            print(f"You scored {score}/7\n"
-                  f"You got a perfect score! Congratulations")
+            print()
+            print(formatter("^", f"You scored {score}/7"))
+            print("You got a perfect score! Congratulations")
     # If difficulty is anything else (1 or 2) the result will be out of 10
     else:
         # If score is between 0 and 3 this prints 'Better luck next time'
         if 0 <= score <= 3:
+            print()
             print(f"You scored {score}/10\n"
                   f"Better luck next time")
         # If score is between 4 and 6 this prints 'Not bad'
         elif 3 < score <= 6:
+            print()
             print(f"You scored {score}/10\n"
                   f"Not bad")
         # If score is between 7 and 9 this prints 'Good job'
         elif 6 < score <= 9:
+            print()
             print(f"You scored {score}/10\n"
                   f"Good job")
         # If score is 10 it prints perfect score and congratulates the user
         else:
+            print()
             print(f"You scored {score}/10\n"
                   f"You got a perfect score! Congratulations")
     # Prints a thank-you message after printing the score
-    print("Thank you for completing this quiz!")
+    print()
+    print(formatter("*", "Thank you for completing this quiz!"))
 
 
 # Main routine
 get_details()
 # Code to call yes/no function
-show_instructions = yes_no("Have you played the quiz before? ")
-print(f"You entered '{show_instructions}'")
+played = yes_no("Have you played the quiz before? ")
+
+# Instructions if they input no when asked if they have played before
+if played == "No":
+    print("This is a quiz about numbers and days in Maori\n"
+          "Please choose a difficulty level to decide which questions you will"
+          "be asked\n"
+          "Then answer the question with correct spelling and after all are "
+          "answered it will show you your score")
+
 # Code to call difficulty_levels() and question_generator()
 difficulty_level, result = question_generator()
 # Calls function and uses difficulty level and result from previous function
