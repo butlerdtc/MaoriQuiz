@@ -13,8 +13,8 @@ def formatter(symbol, text):
 
 
 # Main routine
-print(formatter("-", "Welcome to this quiz about Maori numbers and days"))
+print(formatter("!", "Welcome to this Maori Quiz"))
 print()
-print(formatter("!", "Congratulations, you got a perfect score"))
+print(formatter("*", "This is a quiz about numbers and days in Maori"))
 print()
-print(formatter("*", "Thank you"))
+print(formatter("#", "Thank you for completing this quiz!"))

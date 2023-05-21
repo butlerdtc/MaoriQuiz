@@ -20,7 +20,7 @@ def formatter(symbol, text):
 def get_details():
     # Displays welcome message and uses statement formatter
     print()
-    print(formatter("!", "Welcome to this Maori Quiz."))
+    print(formatter("!", "Welcome to this Maori Quiz"))
     print()
     print("This is a quiz about numbers and the days of the week in Maori.")
     print()
@@ -87,7 +87,7 @@ def yes_no(question_text):
 def difficulty_levels():
     # Statement to explain differences in difficulty levels
     print()
-    print(formatter("*", "This is a quiz about numbers in Maori. "))
+    print(formatter("*", "This is a quiz about numbers and days in Maori. "))
     print("This quiz has three different levels of difficulty.\n"
           "Level 1 is the easiest difficulty\n"
           "Level 2 is medium difficulty\n"
@@ -258,26 +258,26 @@ def calculate_result(level_, score):
         # If score is between 0 and 3 this prints 'Better luck next time'
         if 0 <= score <= 3:
             print()
-            print(f"You scored {score}/10\n"
-                  f"Better luck next time")
+            print(formatter("^", f"You scored {score}/10\n"))
+            print("Better luck next time")
         # If score is between 4 and 6 this prints 'Not bad'
         elif 3 < score <= 6:
             print()
-            print(f"You scored {score}/10\n"
-                  f"Not bad")
+            print(formatter("^", f"You scored {score}/10\n"))
+            print("Not bad")
         # If score is between 7 and 9 this prints 'Good job'
         elif 6 < score <= 9:
             print()
-            print(f"You scored {score}/10\n"
-                  f"Good job")
+            print(formatter("^", f"You scored {score}/10\n"))
+            print("Good job")
         # If score is 10 it prints perfect score and congratulates the user
         else:
             print()
-            print(f"You scored {score}/10\n"
-                  f"You got a perfect score! Congratulations")
+            print(formatter("^", f"You scored {score}/10\n"))
+            print("You got a perfect score! Congratulations")
     # Prints a thank-you message after printing the score
     print()
-    print(formatter("*", "Thank you for completing this quiz!"))
+    print(formatter("#", "Thank you for completing this quiz!"))
 
 
 # Main routine
