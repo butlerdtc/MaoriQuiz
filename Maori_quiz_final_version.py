@@ -258,22 +258,22 @@ def calculate_result(level_, score):
         # If score is between 0 and 3 this prints 'Better luck next time'
         if 0 <= score <= 3:
             print()
-            print(formatter("^", f"You scored {score}/10\n"))
+            print(formatter("^", f"You scored {score}/10"))
             print("Better luck next time")
         # If score is between 4 and 6 this prints 'Not bad'
         elif 3 < score <= 6:
             print()
-            print(formatter("^", f"You scored {score}/10\n"))
+            print(formatter("^", f"You scored {score}/10"))
             print("Not bad")
         # If score is between 7 and 9 this prints 'Good job'
         elif 6 < score <= 9:
             print()
-            print(formatter("^", f"You scored {score}/10\n"))
+            print(formatter("^", f"You scored {score}/10"))
             print("Good job")
         # If score is 10 it prints perfect score and congratulates the user
         else:
             print()
-            print(formatter("^", f"You scored {score}/10\n"))
+            print(formatter("^", f"You scored {score}/10"))
             print("You got a perfect score! Congratulations")
     # Prints a thank-you message after printing the score
     print()
