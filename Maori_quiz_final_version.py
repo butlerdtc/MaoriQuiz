@@ -57,7 +57,7 @@ def get_details():
 
     # Output
     print(f"Welcome to the quiz '{name}', good-luck! ")
-    print(f"We recommended you a difficulty of {difficulty}")
+    print(f"We recommend you a difficulty of {difficulty}")
     print()
 
 
